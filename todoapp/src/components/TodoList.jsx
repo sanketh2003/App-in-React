@@ -1,9 +1,10 @@
 import React from 'react'
 import TodoItem from './TodoItem';
+import styles from './todolist.module.css'
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos,setTodos}) => {
   return (
-    <div> {todos.map((item) => (<TodoItem key={item} item={item}/>))}</div>
+    <div className={styles.list}> {todos.map((item) => (<TodoItem key={item.name} item={item} todos={todos} setTodos={setTodos}/>))}</div>
   )
 }
 
